@@ -155,19 +155,19 @@ df_right = pd.DataFrame({'KEY': ['K2', 'K3', 'K4', 'K5'],
 ~~~
 - 위의 데이터를 활용하여 아래처럼 만들어보세요(-- 1)
 ~~~python
-   A   B   KEY   C     D
-0  A0  B0  K0  NaN  NaN
-1  A1  B1  K1  NaN  NaN
-2  A2  B2  K2   C2   D2
-3  A3  B3  K3   C3   D3 
+   KEY   A   B    C    D
+0  K0  A0  B0  NaN  NaN
+1  K1  A1  B1  NaN  NaN
+2  K2  A2  B2   C2   D2
+3  K3  A3  B3   C3   D3
 ~~~
 - 위의 데이터를 활용하여 아래처럼 만들어보세요(-- 2)
 ~~~python
-    A    B  KEY   C   D
-0   A2   B2  K2  C2  D2
-1   A3   B3  K3  C3  D3
-2  NaN  NaN  K4  C4  D4
-3  NaN  NaN  K5  C5  D5
+  KEY    A    B   C   D
+0  K2   A2   B2  C2  D2
+1  K3   A3   B3  C3  D3
+2  K4  NaN  NaN  C4  D4
+3  K5  NaN  NaN  C5  D5
 ~~~
 - 위의 데이터를 활용하여 아래처럼 만들어보세요(-- 3)
 ~~~python
