@@ -1,44 +1,71 @@
+# 최소 최대 '0 ~ 1' 범위 변환(scaling to 0 ~ 1 range)
+# - 정규화 vs 표준화.
+# 0 ~ 1 범위 변환에 사용.
+# - sklearn.preprocessing.MinMaxScaler() method
+# - sklearn.preprocessing.minmax_scale() 함수
+
 import numpy as np
-from sklearn.preprocessing import StandardScaler, RobustScaler
-import matplotlib.pyplot as plt
 import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
 
-np.set_printoptions(precision=2)
-np.random.seed(100)
+train = np.array([[10., -10., 1.],
+                  [5., 0., 2.],
+                  [0., 10., 3.]])
 
-mu, sigma = 10, 2
-x = mu + sigma * np.random.randn(100)
-plt.hist(x)
+test = np.array([[9., -10., 1.],
+                 [5., -5., 3.],
+                 [1., 0., 5.]])
 
-np.mean(x)
-np.std(x)
+# 이항변수화
+# 연속형 변수를 특정 기준값 이하이면 '0', 특정 기준값 초과이면 '1'의 두 개의 값만 가지는 변수로 변환
 
-x[98:100] = 100
-np.mean(x)
-np.std(x)
-plt.hist(x, bins=np.arange(0, 102, 2))
+import numpy as np
+from sklearn.preprocessing import Binarizer
 
-# 이상치가 포함된 데이터의 표준정규분포로의 표준화
-x = x.reshape(-1, 1)
-x_StandardScaler = StandardScaler().fit_transform(x)
-np.mean(x_StandardScaler)
-np.std(x_StandardScaler)
+X = np.array([[10., -10., 1.],
+              [5., 0., 2.],
+              [0., 10., 3.]])
 
-x_StandardScaler_zoom_in = x_StandardScaler[x_StandardScaler < 5]
+binarizer = Binarizer().fit(X)
+binarizer.transform(X)
 
-# (2) 이상치가 포함된 데이터의 중앙값과 IQR 를 이용한 표준화
-np.median(x)
-Q1 = np.percentile(x, 25, axis=0)
-Q3 = np.percentile(x, 75, axis=0)
-IQR = Q3 - Q1
+binarizer = Binarizer(threshold=2.0)
+binarizer.transform(X)
 
-x_RobustScaler = RobustScaler().fit_transform(x)
+# (2) sklearn.preprocessing.binarize() 함수를 사용한 이항변수화
+from sklearn.preprocessing import binarize
+binarize(X)
+binarize(X, threshold=2.0)
+binarize(X, threshold=2.0, copy=False)
 
-np.median(x_RobustScaler)
-np.mean(x_RobustScaler)
-np.std(x_RobustScaler)
+X = np.array([[10., -10., 1.],
+              [5., 0., 2.],
+              [0., 10., 3.]])
 
-plt.hist(x_RobustScaler)
-x_RobustScaler_zoon_in = x_RobustScaler[x_RobustScaler < 5]
-plt.hist(x_RobustScaler_zoon_in, bins=np.arange(-3, 3, 0.2))
+# 범주형 변수의 이항변수화: sklearn.preprocessing.OneHotEncoder()
+
+from sklearn.preprocessing import OneHotEncoder
+import numpy as np
+data_train = np.array([[0, 0, 0],
+                       [0, 1, 1],
+                       [0, 2, 2],
+                       [1, 0, 3],
+                       [1, 1, 4]])
+
+print(data_train)
+
+# OneHotEncoder() 로 범주형 변수의 이항변수화 적합시키기: enc.fit()
+help(OneHotEncoder)
+
+enc = OneHotEncoder(categories='auto',
+                    drop=None,
+                    sparse=True,
+                    handle_unknown='ignore')
+enc.fit(data_train)
+
+enc.transform([["1", '0', '2']]).toarray()
+enc.inverse_transform([[0., 1., 1., 0., 0., 0., 0., 1., 0., 0.]])
+enc.get_feature_names()
+enc.get_params()
+
 
