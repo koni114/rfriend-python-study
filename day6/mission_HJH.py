@@ -53,17 +53,22 @@ df_melt = pd.melt(data,
 
 # 과제 4
 # 다음의 데이터를 로드해주세요
+import pandas as pd
+import numpy as np
 data_wide = pd.DataFrame({"C1prd1": {0: "a", 1: "b", 2: "c"},
                           "C1prd2": {0: "d", 1: "e", 2: "f"},
                           "C2prd1": {0: 2.5, 1: 1.2, 2: .7},
                           "C2prd2": {0: 3.2, 1: 1.3, 2: .1},
                           "value": dict(zip(range(3), np.random.randn(3)))})
 
+data_wide['seq_no'] = data_wide.index
+
 # 아래와 같은 구조로 변경해주세요(-- 1)
 df_wide_to_long = pd.wide_to_long(data_wide,
                                   stubnames=['C1', 'C2'],
                                   i=['seq_no'],
-                                  j='prd')
+                                  j='prd',
+                                  suffix='\\w+')
 
 print(df_wide_to_long.index)
 print(df_wide_to_long.columns)
@@ -82,3 +87,4 @@ pd.crosstab(data.id, [data.fac_1, data.fac_2])
 
 # 아래와 같은 구조로 변경해주세요(-- 3)
 pd.crosstab(data.id, [data.fac_1, data.fac_2], margins=True)
+
