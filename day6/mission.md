@@ -36,6 +36,8 @@ All      70.0  25.0  40.0  135.0
 ### 과제 2
 - 다음의 데이터를 로드해보세요
 ~~~python
+mul_index = pd.MultiIndex.from_tuples([('cust_1', '2015'), ('cust_1', '2016'),
+                                       ('cust_2', '2015'), ('cust_2', '2016')])
 data = pd.DataFrame(data=np.arange(16).reshape(4, 4),
                     index=mul_index,
                     columns=['prd_1', 'prd_2', 'prd_3', 'prd_4'],
@@ -78,10 +80,10 @@ cust_2   prd_1     8    12
 ### 과제 3
 - 다음의 데이터를 로드해주세요
 ~~~python
-data = DataFrame({'cust_ID': ['C_001', 'C_001', 'C_002', 'C_002'],
-                  'prd_CD': ['P_001', 'P_002', 'P_001', 'P_002'],
-                  'pch_cnt': [1, 2, 3, 4],
-                  'pch_amt': [100, 200, 300, 400]})
+data = pd.DataFrame({'cust_ID': ['C_001', 'C_001', 'C_002', 'C_002'],
+                     'prd_CD': ['P_001', 'P_002', 'P_001', 'P_002'],
+                     'pch_cnt': [1, 2, 3, 4],
+                     'pch_amt': [100, 200, 300, 400]})
 ~~~
 - 아래와 같은 구조로 변경해주세요(-- 1)
 ~~~python
