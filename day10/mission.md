@@ -1,8 +1,10 @@
 ## day 10
 ### 과제 1
 - sin(0°), sin(30°), sin(45°), sin(60°), sin(90°) 의 값을 구해보세요
-- 다음의 곡선 그래프를 그려보세요
+- 다음의 곡선 그래프를 그려보세요  
+
 ![img](https://github.com/koni114/rfriend-python-study/blob/master/img/sin_graph.png)
+
 - 다음의 x에 해당하는 값을 구해보세요  
   `np.sin(x) =  1`
 - 다음의 x에 해당하는 값을 구해보세요  
