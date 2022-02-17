@@ -38,8 +38,8 @@ x = np.array([-100, 1, -4, 100])
 a = np.array([0, 1, 2, np.nan, 4, np.inf, np.NINF, np.PINF])
 ~~~
   - 배열에 NaN이 있으면 True 를 반환하는 결과를 도출해보세요
-  - 배열에 유한수(finitite) 포함 여부를 확인해보세요 
-  - 배열에 무한수(infinitite) 포함 여부를 확인해보세요
+  - 배열에 유한수(finite) 포함 여부를 확인해보세요 
+  - 배열에 무한수(infinite) 포함 여부를 확인해보세요
   - 배열에 음의 무한수 포함 여부를 확인해보세요
   - 배열에 양의 무한수 포함 여부를 확인해보세요
 - 다음의 데이터를 로드해보세요
@@ -49,6 +49,10 @@ all_TF = [[True, False], [True, True]]
   - 배열의 모든 원소가 참이면 True, 아니면 False 를 반환해보세요
   - 배열의 각 행의 원소가 모두 참이면, True, 아니면 False 를 반환해보세요
   - 배열의 각 열의 원소가 모두 참이면, True, 아니면 False 를 반환해보세요
+- 다음의 데이터를 로드해보세요
+~~~python
+any_TF = [[False, False], [True, True]]
+~~~
   - 배열의 1개 이상의 원소가 True면 True, 아니면 False를 반환해보세요
   - 배열의 행 별로 1개 이상 원소가 True면 True, 아니면 False를 반환해보세요
   - 배열의 열 별로 1개 이상 원소가 True면 True, 아니면 False를 반환해보세요

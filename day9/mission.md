@@ -52,7 +52,7 @@ array([[12, 13, 14],
 ~~~python
 a = np.arange(15).reshape(5, 3)
 ~~~
-- Fancy Indexing 을 활용하여, 아래와 같은 결과가 나오도록 해보세요(-- 1)
+- Fancy Indexing 을 활용하여, 아래와 같은 결과가 나오도록 해보세요(-- 1)  
   (여러 가지 방법이 있습니다. 최대한 생각해서 출력해보세요)
 ~~~python
 Out[6]:
