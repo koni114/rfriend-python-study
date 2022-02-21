@@ -162,9 +162,31 @@ Out[7]:
   해당 dataframe을 `indicator_mat` 에 저장해주세요 
   - `indicator_mat` 데이터 프레임에 각 행별로 해당하는 음악 장르를 1로 채워 넣어 One-Hot encoding 을 완성하세요
   - 기존의 `music_multi_df` dataFrame 과 `indicator_mat` 를 합쳐서 완성해주세요
+~~~python
+music_multi_df = DataFrame({'music_id': [1, 2, 3, 4, 5],
+                            'music_genre': ['rock|punk rock|heavy metal',
+                                            'hip hop|reggae',
+                                            'pop|jazz|blues',
+                                            'disco|techo',
+                                            'rhythm and blues|blues|jazz']})
+~~~
+
 
 ### 과제 5
-- 다음의 바다 해산물 전복(abalone) 데이터를 입니다.  
+- 다음의 바다 해산물 전복(abalone)를 로드해주세요. 
   해당 데이터를 잘 조사하여, 다음과 같은 결과값을 도출해보세요
-  - 다음은 전복의 성별과 전복의 길이를 범주형 데이터로 처리하여 추가한 컬럼 `length_cat` 을 이용하여 성별 별 length_cat 의 평균치를 구한 결과입니다.
-  - `length_cat` 은 `abalone.length` 의 평균 값보다 크면 `length_long`, 작거나 같으면 `length_short` 로 구분해야 합니다.
+~~~python
+abalone = pd.read_csv('./abalone.txt',
+                     sep=',',
+                     names=['sex', 'length', 'diameter', 'height',
+                            'whole_weight', 'shucked_weight', 'viscera_weight',
+                            'shell_weight', 'rings'],
+                     header=None,
+                     )
+~~~
+- `abalone` 데이터의 상위 5개의 데이터 샘플을 출력해보고 확인해보세요
+- `abalone` 데이터의 컬럼별 결측치 개수를 확인해보세요
+- 전복 성별 그룹별로 전복의 전체 무게 평균, 크기(size)를 계산해보세요
+- 성별(sex)과 길이(length)를 가지고 범주형 변수를 하나 새로 만드세요  
+  - 길이의(length) 중앙값보다 크면, `length_long` 으로, 중앙값보다 작으면 `length_short` 의 이름으로하는 새로운 범주 `length_cat` 을 만들어주세요
+- 성별 그룹과 길이 범주(`length_cat`) 그룹별로 GroupBy를 사용하여 평균을 구해보세요

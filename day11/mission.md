@@ -59,7 +59,8 @@ array([[ 0,  3,  6,  9],
 - 다음의 데이터를 로드해보세요
 ~~~python
 import numpy as np
-x = np.array([1, 2, 3, 1, 2, 4])
+x = np.array([1, 2, 3, 4])
+y = np.array([3, 4, 5, 6])
 ~~~
 - 다음의 결과를 Numpy 함수를 사용해서 도출해보세요
   - 두 개의 배열 x, y 의 교집합을 정렬하여 반환
