@@ -132,4 +132,15 @@ abalone = pd.read_csv('./abalone.txt',
                      )
 
 
+abalone.head(5)
+abalone.isnull().sum()
+abalone['whole_weight'].groupby(abalone['sex']).mean()
+abalone['length_cat'] = np.where(abalone['length'] > np.median(abalone['length']),
+                                 'length_long',
+                                 'length_short')
+
+
+
+
+
 

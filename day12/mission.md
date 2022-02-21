@@ -189,4 +189,4 @@ abalone = pd.read_csv('./abalone.txt',
 - 전복 성별 그룹별로 전복의 전체 무게 평균, 크기(size)를 계산해보세요
 - 성별(sex)과 길이(length)를 가지고 범주형 변수를 하나 새로 만드세요  
   - 길이의(length) 중앙값보다 크면, `length_long` 으로, 중앙값보다 작으면 `length_short` 의 이름으로하는 새로운 범주 `length_cat` 을 만들어주세요
-- 성별 그룹과 길이 범주(`length_cat`) 그룹별로 GroupBy를 사용하여 평균을 구해보세요
+- 성별 그룹과 길이 범주(`length_cat`) 그룹별로 GroupBy를 사용하여 `whole_weight'`의 평균을 구해보세요
