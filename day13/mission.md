@@ -2,12 +2,22 @@
 ### 과제 1
 - 다음의 데이터 `abalone.txt`를 로드해서 `abalone` 변수에 저장해주세요. 
   해당 데이터는 day13 directory 아래 존재합니다. 
+~~~python
+abalone = pd.read_csv('./abalone.txt',
+                     sep=',',
+                     names=['sex', 'length', 'diameter', 'height',
+                            'whole_weight', 'shucked_weight', 'viscera_weight',
+                            'shell_weight', 'rings'],
+                     header=None,
+                     )
+~~~
 - `abalone` 데이터에서 `length_cat` 컬럼을 추가해주세요. 생성 조건은 다음과 같습니다.  
   - `length` 의 값이 중앙값 보다 크면 `length_long`, 작거나 같으면 `length_short` 로 편성해주세요.
 - `abalone` 데이터셋을 성별(sex)로 GroupBy를 한 후에, for loop를 돌려 그룹 이름(sex: 'F', 'I', 'M') 별로 출력해주세요  
   각 그룹별 데이터셋은 최대 5개까지 출력해주세요. 다음과 같은 결과값이 출력되어야 합니다.
 ~~~
-F    sex    length_cat  whole_weight  rings
+F    
+    sex    length_cat  whole_weight  rings
 2    F  length_short        0.6770      9
 6    F  length_short        0.7775     20
 7    F  length_short        0.7680     16
@@ -15,14 +25,16 @@ F    sex    length_cat  whole_weight  rings
 10   F  length_short        0.6065     14
 
 
-I    sex    length_cat  whole_weight  rings
+I    
+    sex    length_cat  whole_weight  rings
 4    I  length_short        0.2050      7
 5    I  length_short        0.3515      8
 16   I  length_short        0.2905      7
 21   I  length_short        0.2255     10
 42   I  length_short        0.0700      5
 
-M    sex    length_cat  whole_weight  rings
+M    
+    sex    length_cat  whole_weight  rings
 0    M  length_short        0.5140     15
 1    M  length_short        0.2255      7
 3    M  length_short        0.5160     10
@@ -117,11 +129,11 @@ df = DataFrame({'name': ['kim', 'KIM', 'Kim', 'lee', 'LEE', 'Lee', 'wang', 'hong
 6	wang	7	    50	    others
 7	hong	8	    80	    others
 ~~~
-- 위의 도출된 데이터를 기반으로, `name_2` 컬럼별 평균값(`value_2`) 을 도출해보세요  
+- 위의 도출된 데이터를 기반으로, `name_2` 컬럼별 합계(`value_2`) 을 도출해보세요  
   다음과 같은 결과값이 도출되어야 합니다.
 ~~~
-      value	value_2
-name_   2		
+       value	value_2
+name_2   		
 kim	    6	 600
 lee	    15	 500
 others	15	 130
@@ -188,12 +200,13 @@ r4	31	54
 ~~~
 print(hier_df)
 
-col_level_1	col_g1	  col_g2
-col_level_2	c1	c2	c3	c4	c5
-r1	         0	1	2	3	4
-r2	         5	6	7	8	9
-r3	        10	11	12	13	14
-r4	        15	16	17	18	19
+col_level_1 col_g1     col_g2        
+col_level_2     c1  c2     c3  c4  c5
+r1               0   1      2   3   4
+r2               5   6      7   8   9
+r3              10  11     12  13  14
+r4              15  16     17  18  19
+
  
 hier_df.groupby(level = 'col_level_1', axis=1).mean()
 
@@ -214,6 +227,6 @@ df
 ~~~
 - 다음의 결과를 도출해보세요
   - `group` 별 non-NA 개수를 도출해보세요  
-  - `group` 내 non-NA 값 중 최소값 별 non-NA 합을 도출해보세요
-  - `group` 내 non-NA 값 중 최소값을 도출해보세요
-  - `group` 내 non-NA 값 중 분위수를 도출해보세요
+  - `group` 별 non-NA 합을 도출해보세요
+  - `group` 별 non-NA 최소값을 도출해보세요
+  - `group` 별 non-NA 1분위수를 도출해보세요
