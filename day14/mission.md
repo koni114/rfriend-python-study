@@ -115,3 +115,5 @@ df.loc[[1, 6], ['col_1', 'col_2']] = np.nan
 - 그룹별로 NaN이 아닌 원소의 '개수(count)', '합(sum)', '최대값(max)'을 계산하여 `df`의 새로울 컬럼으로 추가해보세요
   (hint: `transform`)
 
+
+
