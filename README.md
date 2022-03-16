@@ -22,3 +22,23 @@
     └── mission.md : day1에 대한 과제 내역
     └── mission_HJH.md : HJH이 제출한 과제 정답
 ```
+
+### 날짜별 python Contents 정리
+```
+├──day1
+    └── pd.read_csv, pd.DataFrame 생성, 행, 컬럼 선택 방법
+├──day2
+    └── df.reindex, pd.date_range, pd.concat
+    └── pd.merge(특정 컬럼기반, index 기반)
+├──day3
+    └── df.isnull, df.sum, df.mean, df.std
+    └── np.where, df.dropna, pd.Series.interporlate
+├──day4
+    └── pd.Series.replace, pd.duplicated, pd.drop_duplicates
+    └── pd.Series.unique, pd.Series.value_counts
+    └── scipy.stats, StandardScaler
+    └── np.set_printoptions
+    └── RobustScaler
+├──day5
+    └── 
+```
