@@ -40,5 +40,11 @@
     └── np.set_printoptions
     └── RobustScaler
 ├──day5
-    └── 
-```
+    └── MinMaxScaler, Binarizer, binarize
+    └── OneHotEncoder, np.linspace, np.digitize
+    └── pd.get_dummies vs OneHotEncoder
+    └── PolynomialFeatures
+├──day6
+    └── pd.pivot_table, pd.stack, pd.unstack
+    └── pd.melt, pd.crosstab
+``` 
