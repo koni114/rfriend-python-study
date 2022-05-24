@@ -38,6 +38,7 @@ y = np.array([5, 6, 7, 8, 9])
 file_name = 'savetxt.txt'
 np.savetxt(file_name,
            (x, y),
+           fmt="%0.2f",
            header='--xy save start--',
            footer='--xy save end--')
 

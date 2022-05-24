@@ -163,7 +163,7 @@ Out[7]:
   - `indicator_mat` 데이터 프레임에 각 행별로 해당하는 음악 장르를 1로 채워 넣어 One-Hot encoding 을 완성하세요
   - 기존의 `music_multi_df` dataFrame 과 `indicator_mat` 를 합쳐서 완성해주세요
 ~~~python
-music_multi_df = DataFrame({'music_id': [1, 2, 3, 4, 5],
+music_multi_df = pd.DataFrame({'music_id': [1, 2, 3, 4, 5],
                             'music_genre': ['rock|punk rock|heavy metal',
                                             'hip hop|reggae',
                                             'pop|jazz|blues',
