@@ -6,7 +6,7 @@ personnel_df = pd.DataFrame({'sequence': [1, 3, 2],
                              'age': [30, 20, 40]})
 
 personnel_df.sort_values(["sequence"], inplace=True)
-print(personnel_df[["age", "name", "sequence"]])
+personnel_df.sort_index(1)
 
 
 personnel_df.sort_values(["sequence"], ascending=False)
@@ -23,4 +23,4 @@ personnel_tuple = [(1, 'park', 30),
                    (3, 'lee', 20),
                    (2, 'choi', 40)]
 
-sorted(personnel_tuple, key=lambda x: -x[1])
+sorted(personnel_tuple, key=lambda x: x[2])
