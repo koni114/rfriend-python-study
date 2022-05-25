@@ -49,8 +49,8 @@ data_train = np.array([[0, 0, 0],
 # - train data 에 포함되어있지 않은 category 가 발생할 경우, 무시
 
 from sklearn.preprocessing import OneHotEncoder
-enc = OneHotEncoder(handle_unknown='ignore')
-enc.fit(data_train)
+enc = OneHotEncoder(handle_unknown="ignore", sparse=False)
+enc.fit_transform(data_train)
 
 # 과제 4
 import pandas as pd

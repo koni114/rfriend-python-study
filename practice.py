@@ -1,29 +1,26 @@
 import pandas as pd
-from pandas import DataFrame
 import numpy as np
 
-df = DataFrame(data=np.arange(20).reshape(4, 5),
-               columns = ['c1', 'c2', 'c3', 'c4', 'c5'],
-               index = ['r1', 'r2', 'r3', 'r4'])
+personnel_df = pd.DataFrame({'sequence': [1, 3, 2],
+                             'name': ['park', 'lee', 'choi'],
+                             'age': [30, 20, 40]})
 
-groupby_dict = {"r1": "row_g1",
-                "r2": "row_g1",
-                "r3": "row_g2",
-                "r4": "row_g2"}
+personnel_df.sort_values(["sequence"], inplace=True)
+print(personnel_df[["age", "name", "sequence"]])
 
-df.groupby(groupby_dict).sum()
 
-groupby_dict = {"c1": "col_g1",
-                "c2": "col_g1",
-                "c3": "col_g2",
-                "c4": "col_g2",
-                "c5": "col_g2"}
+personnel_df.sort_values(["sequence"], ascending=False)
 
-df.groupby(groupby_dict, axis=1).sum()
+personnel_df = pd.DataFrame({'sequence': [1, 3, np.nan],
+                             'name': ['park', 'lee', 'choi'],
+                             'age': [30, 20, 40]})
 
-df = pd.DataFrame({'group': ['a', 'a', 'a', 'b', 'b', 'b'],
-                   'value_1': np.arange(6),
-                   'value_2': np.random.randn(6)})
-df
+personnel_df.sort_values(["sequence"], na_position="first")
+personnel_df.sort_values(["sequence"], na_position="last")
 
-df.groupby("group").count()
+
+personnel_tuple = [(1, 'park', 30),
+                   (3, 'lee', 20),
+                   (2, 'choi', 40)]
+
+sorted(personnel_tuple, key=lambda x: -x[1])
