@@ -47,4 +47,40 @@
 ├──day6
     └── pd.pivot_table, pd.stack, pd.unstack
     └── pd.melt, pd.crosstab
-``` 
+├──day7
+    └── pd.sort_values, pd.sort_index, 
+    └── pd.series slicing 방법 정리
+    └── pd.dataFrame slicing 방법 정리
+    └── np.array vs np.asarray
+    └── np.zeros, np.ones, np.eye, np.identity
+    └── np.random.normal, np.random.binomial, np.random.hypergeometric, np.random.chisquare
+    └── np.astype, np.float64
+├──day8
+    └── np.array vectorization 연산
+    └── np.array 비교 연산. np.equal, np.not_equal, np.greater, np.greater_equal, np.less, np.less_equal
+    └── np.logical_and, np.logical_or, np.logical_xor
+    └── 차원 축 변경 --> np.newaxis, np.reshape
+    └── np.tile
+    └── np.transpose, np.swapaxes
+├──day9
+    └── Fancy Indexing
+    └── np.ix_
+    └── np.round, np.rint, np.fix, np.ceil, np.floor, np.trunc
+    └── np.prod, np.sum, np.nanprod, np.nansum, np.cumprod, np.cumsum, 
+    └── np.diff, np.ediff1d, np.exp, np.log, np.log10, np.log2, np.log1p
+├──day10
+    └── np.sin, np.arcsin, np.arccos, np.arctan, np.deg2rad, np.sign, np.modf
+    └── np.sqrt, np.square, np.abs, np.fabs, np.isnan, np.isfinite, np.isinf
+    └── np.isneginf, np .isposinf, np.all, np.any
+├──day11
+    └── 데이터를 1차원으로 펴주는 함수 --> np.ravel 
+    └── np.hstack, np.concatenate, np.vstack, np.column_stack
+    └── np.intersect1d, np.union1d, np.in1d, np.setdiff1d, np.setor1d
+    └── np.max, np.min, np.argmin, np.argmax, np.where
+    └── np.argsort
+├──day12
+    └── np.save, np.load, np.savez_compressed, np.savetxt
+    └── np.split, np.hsplit, np.vsplit
+    └── np.diag, np.dot, np.linalg.det, np.linalg.inv, np.linalg.eig, np.linalg.svd
+    └── np.lonalg.solve, np.allclose, np.linalg.lstsq
+```
