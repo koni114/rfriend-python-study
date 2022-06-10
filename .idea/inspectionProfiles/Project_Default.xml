@@ -14,6 +14,8 @@
         <list>
           <option value="ssl._create_unverified_context" />
           <option value="urllib.request" />
+          <option value="object.intercept_" />
+          <option value="object.coef_" />
         </list>
       </option>
     </inspection_tool>
