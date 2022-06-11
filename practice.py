@@ -176,3 +176,18 @@ os.remove(os.path.join(os.getcwd(), "test.txt"))
 
 # 경로와 파일을 한꺼번에 모두 삭제하기
 # shutil.rmtree(os.getcwd())
+
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame({"id": ["A_001", "A_002", "A_003",
+                          "B_001",  "C_001", "C_002"],
+                   "val": np.arange(6)})
+
+df["grp"] = df.id.str.split("_").str[0]
+print(df)
+
+df = pd.DataFrame({"grp": ['A', 'A' , 'A', 'B', 'B', 'B', 'C', 'C', 'C'],
+                   "val": [1, 2, np.nan, 4, np.nan, np.nan, 7, 8, 9]})
+
+s = pd.Series([1, 2, np.nan, 4, np.nan, np.nan, 7, 8, 9])
