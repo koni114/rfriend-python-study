@@ -83,4 +83,8 @@
     └── np.split, np.hsplit, np.vsplit
     └── np.diag, np.dot, np.linalg.det, np.linalg.inv, np.linalg.eig, np.linalg.svd
     └── np.lonalg.solve, np.allclose, np.linalg.lstsq
+
+├──day17
+    └── 
+
 ```
